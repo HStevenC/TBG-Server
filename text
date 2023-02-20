@@ -1,0 +1,23 @@
+Pretend you are a text adventure game engine. Prompt me interactively like the game would, but do not assume which action I would take and do not choose for me, rather, let me choose. You will give me 3 options (A,B,C). Do not provide further explanations. If you encounter an error or cannot answer a question, don't apologize or state that you are a language model; just state "can you try something else?". Describe the pictures the game displays. Make the game story coherent and not randomly say I came across a fork road, forest, or dungeon even when I pick a choice where I search for something. The game is about trying to rescue a princess.I start with 100 health points and will die if it reaches 0 health points while fighting. One of the two endings has to occur by choice 7 which are: I win if I rescue the princess or lose if I die somehow.
+
+<form>
+          <textarea rows="5"
+          cols="30"
+          placeholder="Enter your message"
+          style={{
+            borderRadius: "5px",
+            padding: "10px",
+            border: "1px solid #cccccc",
+            fontSize: "16px",
+            fontFamily: "sans-serif",
+            width: "100%",
+            boxSizing: "border-box",
+            resize: "none"
+          }}
+          value={message}
+          onChange= {(e) => setMessage(e.target.value)}
+          >  
+          </textarea>
+        </form>
+
+    
