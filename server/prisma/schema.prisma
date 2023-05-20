@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model chathistory {
+  messageid Int     @id @default(autoincrement())
+  user_id   String? @db.Uuid
+  message   String?
+  users     users?  @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model users {
+  user_id       String        @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  user_name     String        @unique @db.VarChar(255)
+  user_email    String        @unique @db.VarChar(255)
+  user_password String        @db.VarChar(255)
+  chathistory   chathistory[]
+}
